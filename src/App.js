@@ -195,11 +195,13 @@ const App = () => {
         <div className="col box">
           <h5 className="fw-bold">Enter a City Name</h5>
           <Stack>
-            <Autocomplete
+          <Autocomplete
               freeSolo
               id="free-solo-2-demo"
               disableClearable
-              // options={searchHistory.map((option) => option)}
+              options={
+                searchHistory ? searchHistory.map((option) => option) : []
+              }
               onChange={handleChange}
               onInputChange={handleInputChange}
               renderInput={(params) => (
@@ -287,7 +289,7 @@ const App = () => {
               </div>
               <h4 className="my-4 fw-bold">4-Day Forecast</h4>
               <div className="row ">
-                {/* {weatherData.forecastday.slice(1).map((data, index) => (
+                {weatherData.forecastday.slice(1).map((data, index) => (
                   <div
                     key={index}
                     className="col p-4 m-1 text-light rounded"
@@ -307,7 +309,7 @@ const App = () => {
                       Humidity: {data.day.avghumidity}%
                     </div>
                   </div>
-                ))} */}
+                ))}
               </div>
             </>
           ) : (

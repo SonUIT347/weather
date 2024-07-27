@@ -161,9 +161,9 @@ const App = () => {
       const data = {
         name: response.data.location.name,
         date: response.data.forecast.forecastday[0].date,
-        forecastday: response.data.forecast.forecastday.map(
-          ({ day, date }) => ({ day, date })
-        ),
+        // forecastday: response.data.forecast.forecastday.map(
+        //   ({ day, date }) => ({ day, date })
+        // ),
       };
 
       console.log(data);
@@ -199,7 +199,7 @@ const App = () => {
               freeSolo
               id="free-solo-2-demo"
               disableClearable
-              options={searchHistory.map((option) => option)}
+              // options={searchHistory.map((option) => option)}
               onChange={handleChange}
               onInputChange={handleInputChange}
               renderInput={(params) => (
@@ -287,7 +287,7 @@ const App = () => {
               </div>
               <h4 className="my-4 fw-bold">4-Day Forecast</h4>
               <div className="row ">
-                {weatherData.forecastday.slice(1).map((data, index) => (
+                {/* {weatherData.forecastday.slice(1).map((data, index) => (
                   <div
                     key={index}
                     className="col p-4 m-1 text-light rounded"
@@ -307,7 +307,7 @@ const App = () => {
                       Humidity: {data.day.avghumidity}%
                     </div>
                   </div>
-                ))}
+                ))} */}
               </div>
             </>
           ) : (

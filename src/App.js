@@ -58,7 +58,7 @@ const App = () => {
   const [inputEmail, setInputEmail] = useState('')
 
   const handleUnsubcribe = ()=>{
-    axios.post('http://taitai3006.pythonanywhere.com/logout/', {
+    axios.post('https://taitai3006.pythonanywhere.com/logout/', {
       gmail: userData.gmail
     })
     .then(function (response) {
@@ -75,7 +75,7 @@ const App = () => {
     e.preventDefault();
     navigator.geolocation.getCurrentPosition(
       ({ coords: { latitude, longitude } }) => {
-        axios.post('http://taitai3006.pythonanywhere.com/register/', {
+        axios.post('https://taitai3006.pythonanywhere.com/register/', {
           gmail: inputEmail,
           location: `${latitude},${longitude}`
         })
@@ -138,7 +138,7 @@ const App = () => {
 
   const fetchLocationByIP = async () => {
     try {
-      const response = await axios.get(`http://taitai3006.pythonanywhere.com/getLocationByIP`);
+      const response = await axios.get(`https://taitai3006.pythonanywhere.com/getLocationByIP`);
       fetchWeatherData(response.data);
     } catch (error) {
       console.error(error);
@@ -155,7 +155,7 @@ const App = () => {
 
     try {
       const response = await axios.get(
-        `http://taitai3006.pythonanywhere.com/getWeatherInfo?q=${location}`
+        `https://taitai3006.pythonanywhere.com/getWeatherInfo?q=${location}`
       );
       console.log(data)
       

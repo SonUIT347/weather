@@ -57,7 +57,7 @@ const App = () => {
 
   const handleUnsubcribe = () => {
     axios
-      .post("http://127.0.0.1:8000/logout/", {
+      .post("https://taitai3006.pythonanywhere.com/logout/", {
         gmail: userData.gmail,
       })
       .then(function (response) {

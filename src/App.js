@@ -57,7 +57,7 @@ const App = () => {
 
   const handleUnsubcribe = () => {
     axios
-      .post("https://taitai3006.pythonanywhere.com/logout/", {
+      .post("https://g-weather-forecast-server.vercel.app/logout/", {
         gmail: userData.gmail,
       })
       .then(function (response) {
@@ -74,7 +74,7 @@ const App = () => {
     navigator.geolocation.getCurrentPosition(
       ({ coords: { latitude, longitude } }) => {
         axios
-          .post("https://taitai3006.pythonanywhere.com/register/", {
+          .post("https://g-weather-forecast-server.vercel.app/register/", {
             gmail: inputEmail,
             location: `${latitude},${longitude}`,
           })
@@ -137,7 +137,7 @@ const App = () => {
 
   const fetchLocationByIP = async () => {
     try {
-      const response = await axios.get(`https://taitai3006.pythonanywhere.com/getLocationByIP`);
+      const response = await axios.get(`https://g-weather-forecast-server.vercel.app/getLocationByIP`);
       fetchWeatherData(response.data);
     } catch (error) {
       console.error(error);
@@ -154,7 +154,7 @@ const App = () => {
 
     try {
       const response = await axios.get(
-        `https://taitai3006.pythonanywhere.com/getWeatherInfo/?q=${location}`
+        `https://g-weather-forecast-server.vercel.app/getWeatherInfo/?q=${location}`
       );
 
       const data = {
